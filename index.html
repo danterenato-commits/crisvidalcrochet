@@ -1,886 +1,370 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cris Vidal | Crochê Artesanal Premium</title>
-  <meta name="description" content="Peças únicas de crochê feitas à mão com amor e dedicação. Bolsas, porta-copos, trilhos de mesa e muito mais. Encomendas pelo WhatsApp." />
-  <meta name="keywords" content="crochê artesanal, bolsas de crochê, porta copos crochê, trilho de mesa crochê, artesanato premium, Cris Vidal" />
-  <meta property="og:title" content="Cris Vidal | Crochê Artesanal Premium" />
-  <meta property="og:description" content="Peças únicas de crochê feitas à mão com amor e dedicação." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cris Vidal | Crochê Artesanal Premium</title>
+    <meta name="description" content="Peças únicas de crochê feitas à mão com amor e dedicação. Bolsas, porta-copos, trilhos de mesa e muito mais. Encomendas pelo WhatsApp." />
+    <meta name="keywords" content="crochê artesanal, bolsas de crochê, porta copos crochê, trilho de mesa crochê, artesanato premium, Cris Vidal" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream: #F5EFE6;
+            --clay: #D8B4A0;
+            --terracotta: #A64B2A;
+            --dark-brown: #3E2723;
+            --charcoal: #212121;
+            --bg-light: #FAF8F5;
+        }
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dark-brown);
+        }
+        header {
+            background-color: var(--cream);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        header h1 { font-size: 2.8rem; font-weight: 500; letter-spacing: 2px; }
+        header p { font-size: 1.1rem; color: #757575; font-style: italic; margin-top: 0.5rem; }
 
-    :root {
-      --cream:    #F5EFE6;
-      --sand:     #E8D9C5;
-      --leather:  #9C6B3C;
-      --dark:     #2C2420;
-      --charcoal: #4A4440;
-      --sage:     #8BA898;
-      --gold:     #B8915A;
-      --white:    #FDFAF6;
-    }
+        /* Categorias / Filtros */
+        .catalog-container { max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; }
+        .category-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .tab-btn {
+            background: white;
+            border: 1px solid var(--clay);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 30px;
+            font-family: 'Jost', sans-serif;
+            transition: all 0.3s ease;
+            color: var(--dark-brown);
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
+            box-shadow: 0 4px 12px rgba(166, 75, 42, 0.2);
+        }
 
-    html { scroll-behavior: smooth; }
+        /* Grid do Catálogo */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .img-container {
+            width: 100%;
+            height: 350px;
+            background-color: #EFEFEF;
+            overflow: hidden;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .img-container img { transform: scale(1.05); }
+        .product-info { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-info h3 { font-size: 1.6rem; margin-bottom: 0.5rem; font-weight: 500; }
+        .product-tag { font-size: 0.85rem; color: var(--clay); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 500; }
+        
+        .btn-order {
+            display: inline-block;
+            background-color: var(--dark-brown);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+        .btn-order:hover { background-color: var(--terracotta); }
 
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--white);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
+        /* WhatsApp Fixo */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+        .whatsapp-fixed img { width: 32px; height: 32px; }
 
-    /* ── NOISE TEXTURE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: .4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 4rem;
-      background: rgba(253,250,246,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(156,107,60,.15);
-      transition: padding .3s;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 500; letter-spacing: .08em;
-      color: var(--dark); text-decoration: none;
-    }
-    .nav-logo span { color: var(--leather); font-style: italic; }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-size: .78rem; letter-spacing: .15em; text-transform: uppercase;
-      color: var(--charcoal); text-decoration: none;
-      transition: color .25s;
-    }
-    .nav-links a:hover { color: var(--leather); }
-    .nav-cta {
-      background: var(--leather); color: #fff !important;
-      padding: .45rem 1.2rem; border-radius: 2px;
-    }
-    .nav-cta:hover { background: var(--dark) !important; color: #fff !important; }
-
-    /* hamburger */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--dark); transition: .3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--cream) 0%, var(--sand) 60%, #D4C4AE 100%);
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center; position: relative; overflow: hidden;
-    }
-    .hero-bg-text {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(8rem, 18vw, 22rem); font-weight: 300;
-      color: rgba(156,107,60,.07); white-space: nowrap;
-      pointer-events: none; user-select: none; letter-spacing: .1em;
-    }
-    .hero-content {
-      padding: 8rem 4rem 4rem 6rem;
-      position: relative; z-index: 2;
-    }
-    .hero-tag {
-      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--leather); margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: .8rem;
-    }
-    .hero-tag::before {
-      content: ''; display: block; width: 40px; height: 1px; background: var(--leather);
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 5rem);
-      font-weight: 300; line-height: 1.1;
-      color: var(--dark); margin-bottom: 1.8rem;
-    }
-    .hero-title em { font-style: italic; color: var(--leather); }
-    .hero-desc {
-      font-size: 1rem; font-weight: 300; line-height: 1.8;
-      color: var(--charcoal); max-width: 420px; margin-bottom: 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: .6rem;
-      background: var(--leather); color: #fff;
-      padding: .9rem 2rem; font-size: .82rem; letter-spacing: .12em;
-      text-transform: uppercase; text-decoration: none;
-      border-radius: 2px; transition: background .25s, transform .2s;
-    }
-    .btn-primary:hover { background: var(--dark); transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: .6rem;
-      border: 1px solid var(--dark); color: var(--dark);
-      padding: .9rem 2rem; font-size: .82rem; letter-spacing: .12em;
-      text-transform: uppercase; text-decoration: none;
-      border-radius: 2px; transition: all .25s;
-    }
-    .btn-outline:hover { background: var(--dark); color: #fff; }
-    .hero-image {
-      height: 100vh; position: relative; overflow: hidden;
-    }
-    .hero-image img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(.95) contrast(1.02);
-      animation: heroScale 8s ease-in-out infinite alternate;
-    }
-    @keyframes heroScale { from { transform: scale(1); } to { transform: scale(1.04); } }
-    .hero-image::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to right, var(--cream) 0%, transparent 30%);
-    }
-    .hero-badge {
-      position: absolute; bottom: 3rem; right: 3rem; z-index: 3;
-      background: var(--white); border: 1px solid var(--sand);
-      border-radius: 2px; padding: 1.2rem 1.5rem; text-align: center;
-      box-shadow: 0 4px 30px rgba(44,36,32,.1);
-    }
-    .hero-badge strong {
-      display: block; font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; color: var(--leather);
-    }
-    .hero-badge span { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--charcoal); }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      background: var(--dark); padding: .9rem 0; overflow: hidden;
-    }
-    .marquee-track {
-      display: flex; gap: 3rem; width: max-content;
-      animation: marquee 25s linear infinite;
-    }
-    .marquee-track span {
-      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--sand); white-space: nowrap; flex-shrink: 0;
-    }
-    .marquee-track .dot { color: var(--leather); }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    /* ── ABOUT ── */
-    #sobre {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 80vh; align-items: center;
-    }
-    .sobre-image {
-      height: 80vh; position: relative; overflow: hidden;
-    }
-    .sobre-image img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
-    .sobre-image::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to left, rgba(253,250,246,.6) 0%, transparent 50%);
-    }
-    .sobre-content {
-      padding: 5rem 6rem 5rem 5rem;
-    }
-    .section-tag {
-      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--leather); margin-bottom: 1.2rem;
-      display: flex; align-items: center; gap: .8rem;
-    }
-    .section-tag::before {
-      content: ''; display: block; width: 30px; height: 1px; background: var(--leather);
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem;
-      color: var(--dark);
-    }
-    .section-title em { font-style: italic; color: var(--leather); }
-    .sobre-text {
-      font-size: .95rem; line-height: 1.9; color: var(--charcoal);
-      font-weight: 300; margin-bottom: 1.5rem;
-    }
-    .sobre-stats {
-      display: flex; gap: 3rem; margin-top: 2.5rem;
-      padding-top: 2rem; border-top: 1px solid var(--sand);
-    }
-    .stat strong {
-      display: block; font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem; color: var(--leather); font-weight: 400;
-    }
-    .stat span { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--charcoal); }
-
-    /* ── CATEGORIAS ── */
-    #categorias { padding: 6rem 4rem; background: var(--cream); }
-    .section-header { text-align: center; margin-bottom: 4rem; }
-    .section-header .section-tag { justify-content: center; }
-    .section-header .section-tag::before { display: none; }
-    .section-header .section-tag::after {
-      content: ''; display: block; width: 30px; height: 1px; background: var(--leather);
-    }
-    .cats-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      max-width: 1200px; margin: 0 auto;
-    }
-    .cat-card {
-      position: relative; overflow: hidden; border-radius: 2px;
-      cursor: pointer; aspect-ratio: 3/4;
-      background: var(--sand);
-    }
-    .cat-card img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
-    }
-    .cat-card:hover img { transform: scale(1.06); }
-    .cat-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(44,36,32,.85) 0%, transparent 55%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 2rem;
-    }
-    .cat-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; font-weight: 300; color: #fff;
-      margin-bottom: .3rem;
-    }
-    .cat-sub {
-      font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(255,255,255,.7);
-    }
-    .cat-arrow {
-      position: absolute; top: 1.5rem; right: 1.5rem;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: .9rem;
-      transform: translateY(-8px); opacity: 0;
-      transition: all .3s;
-    }
-    .cat-card:hover .cat-arrow { transform: translateY(0); opacity: 1; }
-
-    /* ── PRODUTOS ── */
-    #produtos { padding: 6rem 4rem; }
-    .prods-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      max-width: 1200px; margin: 0 auto 3rem;
-    }
-    .prods-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-      max-width: 1200px; margin: 0 auto;
-    }
-    .prod-card {
-      background: var(--white); border: 1px solid var(--sand);
-      border-radius: 2px; overflow: hidden;
-      transition: box-shadow .3s, transform .3s;
-    }
-    .prod-card:hover { box-shadow: 0 8px 40px rgba(44,36,32,.1); transform: translateY(-4px); }
-    .prod-img {
-      position: relative; aspect-ratio: 1; overflow: hidden; background: var(--cream);
-    }
-    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-    .prod-card:hover .prod-img img { transform: scale(1.05); }
-    .prod-badge {
-      position: absolute; top: .8rem; left: .8rem;
-      background: var(--leather); color: #fff;
-      font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
-      padding: .25rem .6rem; border-radius: 1px;
-    }
-    .prod-info { padding: 1.2rem; }
-    .prod-cat {
-      font-size: .68rem; letter-spacing: .15em; text-transform: uppercase;
-      color: var(--leather); margin-bottom: .4rem;
-    }
-    .prod-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem; font-weight: 500; color: var(--dark);
-      margin-bottom: .6rem;
-    }
-    .prod-desc { font-size: .8rem; color: var(--charcoal); line-height: 1.6; margin-bottom: 1rem; font-weight: 300; }
-    .prod-footer { display: flex; justify-content: space-between; align-items: center; }
-    .prod-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; color: var(--dark);
-    }
-    .prod-price small { font-size: .7rem; font-family: 'Jost', sans-serif; color: var(--charcoal); display: block; letter-spacing: .05em; }
-    .btn-wpp {
-      display: inline-flex; align-items: center; gap: .4rem;
-      background: #25D366; color: #fff;
-      padding: .5rem 1rem; border-radius: 2px;
-      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; transition: background .2s;
-    }
-    .btn-wpp:hover { background: #128C7E; }
-    .btn-wpp svg { width: 14px; height: 14px; fill: currentColor; }
-
-    /* ── PROCESSO ── */
-    #processo {
-      padding: 6rem 4rem;
-      background: var(--dark);
-      position: relative; overflow: hidden;
-    }
-    #processo::before {
-      content: 'FEITO À MÃO';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(5rem, 15vw, 18rem); font-weight: 300;
-      color: rgba(255,255,255,.03); white-space: nowrap; pointer-events: none;
-      letter-spacing: .1em;
-    }
-    #processo .section-tag { color: var(--gold); }
-    #processo .section-tag::before { background: var(--gold); }
-    #processo .section-title { color: var(--white); }
-    #processo .section-title em { color: var(--gold); }
-    .steps-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 2rem; max-width: 1000px; margin: 4rem auto 0;
-    }
-    .step {
-      text-align: center; padding: 2rem 1rem;
-      border-top: 1px solid rgba(255,255,255,.1);
-      position: relative;
-    }
-    .step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; color: rgba(184,145,90,.2); font-weight: 300;
-      line-height: 1; margin-bottom: 1rem;
-    }
-    .step-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .step-title { font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); margin-bottom: .8rem; }
-    .step-desc { font-size: .82rem; color: rgba(232,217,197,.6); line-height: 1.7; font-weight: 300; }
-
-    /* ── GALERIA ── */
-    #galeria { padding: 6rem 4rem; background: var(--cream); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1rem; max-width: 1200px; margin: 3rem auto 0;
-    }
-    .gallery-grid .g-item { overflow: hidden; border-radius: 2px; }
-    .gallery-grid .g-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform .5s; display: block;
-    }
-    .gallery-grid .g-item:hover img { transform: scale(1.05); }
-    .gallery-grid .g-item:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: 1; }
-    .gallery-grid .g-item:nth-child(2),
-    .gallery-grid .g-item:nth-child(3),
-    .gallery-grid .g-item:nth-child(4),
-    .gallery-grid .g-item:nth-child(5) { aspect-ratio: 1; }
-
-    /* ── INSTAGRAM ── */
-    #instagram {
-      padding: 5rem 4rem; text-align: center;
-      background: var(--white);
-    }
-    .ig-handle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 4.5rem); font-weight: 300;
-      color: var(--dark); margin: 1.5rem 0;
-    }
-    .ig-handle a {
-      color: var(--leather); text-decoration: none; font-style: italic;
-      transition: opacity .2s;
-    }
-    .ig-handle a:hover { opacity: .7; }
-    .ig-desc { font-size: .9rem; color: var(--charcoal); font-weight: 300; margin-bottom: 2rem; }
-    .btn-instagram {
-      display: inline-flex; align-items: center; gap: .6rem;
-      border: 1px solid var(--dark); color: var(--dark);
-      padding: .9rem 2.2rem; font-size: .8rem; letter-spacing: .15em;
-      text-transform: uppercase; text-decoration: none; border-radius: 2px;
-      transition: all .25s;
-    }
-    .btn-instagram:hover { background: var(--dark); color: #fff; }
-
-    /* ── ENCOMENDA ── */
-    #encomenda {
-      padding: 6rem 4rem;
-      background: linear-gradient(135deg, var(--leather) 0%, #7A4E28 100%);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    #encomenda::before {
-      content: '🧶'; position: absolute;
-      font-size: 20rem; opacity: .04;
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      pointer-events: none;
-    }
-    .encomenda-tag {
-      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-      color: rgba(255,255,255,.7); margin-bottom: 1rem;
-    }
-    .encomenda-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 300;
-      color: #fff; line-height: 1.2; margin-bottom: 1.2rem;
-    }
-    .encomenda-title em { font-style: italic; }
-    .encomenda-desc { font-size: .95rem; color: rgba(255,255,255,.8); font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.8; }
-    .btn-wpp-big {
-      display: inline-flex; align-items: center; gap: .8rem;
-      background: #fff; color: var(--leather);
-      padding: 1.1rem 2.8rem; border-radius: 2px;
-      font-size: .85rem; letter-spacing: .15em; text-transform: uppercase;
-      text-decoration: none; font-weight: 500;
-      transition: all .25s;
-    }
-    .btn-wpp-big:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
-    .btn-wpp-big svg { width: 18px; height: 18px; fill: currentColor; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark); padding: 3rem 4rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 2rem;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; color: var(--sand); font-weight: 400;
-    }
-    .footer-logo span { color: var(--gold); font-style: italic; }
-    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
-      color: rgba(232,217,197,.5); text-decoration: none; transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: .72rem; color: rgba(232,217,197,.35); letter-spacing: .05em; }
-
-    /* ── WHATSAPP FLOAT ── */
-    .wpp-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-      width: 56px; height: 56px; border-radius: 50%;
-      background: #25D366; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,.4);
-      text-decoration: none; color: #fff;
-      animation: pulse 2s ease-in-out infinite;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,.5); }
-    .wpp-float svg { width: 28px; height: 28px; fill: currentColor; }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.3); }
-      50% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 12px rgba(37,211,102,0); }
-    }
-
-    /* ── ANIMAÇÕES DE ENTRADA ── */
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: .1s; }
-    .reveal-delay-2 { transition-delay: .2s; }
-    .reveal-delay-3 { transition-delay: .3s; }
-    .reveal-delay-4 { transition-delay: .4s; }
-
-    /* ── RESPONSIVO ── */
-    @media (max-width: 1024px) {
-      nav { padding: 1rem 2rem; }
-      .prods-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; flex-direction: column; gap: 1.5rem; position: fixed; top: 0; right: 0; bottom: 0; width: 70%; background: var(--white); padding: 5rem 3rem; box-shadow: -4px 0 30px rgba(0,0,0,.1); transition: transform .3s; transform: translateX(100%); z-index: 99; }
-      .nav-links.open { display: flex; transform: translateX(0); }
-      .hamburger { display: flex; z-index: 101; }
-      #hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-content { padding: 7rem 1.5rem 2rem; }
-      .hero-image { height: 50vh; }
-      #sobre { grid-template-columns: 1fr; }
-      .sobre-image { height: 50vh; }
-      .sobre-content { padding: 3rem 1.5rem; }
-      .sobre-stats { gap: 1.5rem; }
-      #categorias, #produtos, #galeria, #instagram, #encomenda, #processo { padding: 4rem 1.5rem; }
-      .cats-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .prods-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .steps-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid .g-item:nth-child(1) { grid-column: span 2; }
-      .prods-header { flex-direction: column; gap: 1rem; }
-      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
-      .hero-badge { bottom: 1rem; right: 1rem; }
-    }
-    @media (max-width: 480px) {
-      .prods-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .btn-primary, .btn-outline { text-align: center; justify-content: center; }
-    }
-  </style>
+        footer { text-align: center; padding: 3rem 1rem; color: #999; font-size: 0.9rem; border-top: 1px solid rgba(0,0,0,0.03); margin-top: 4rem; }
+    </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">Cris Vidal <span>Crochê</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#categorias">Categorias</a></li>
-    <li><a href="#produtos">Peças</a></li>
-    <li><a href="#galeria">Galeria</a></li>
-    <li><a href="https://wa.me/5513991807579?text=Olá+Cris!+Vim+pelo+site+e+gostaria+de+fazer+um+pedido." target="_blank" class="nav-links a nav-cta">Encomendar</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <header>
+        <h1>Cris Vidal</h1>
+        <p>Crochê Artesanal Premium</p>
+    </header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg-text">CROCHÊ</div>
-  <div class="hero-content">
-    <p class="hero-tag">Artesanato Premium</p>
-    <h1 class="hero-title">
-      Feito à mão,<br>
-      <em>com alma</em><br>
-      e dedicação
-    </h1>
-    <p class="hero-desc">
-      Cada peça é criada com fios selecionados, técnica apurada e muito amor. 
-      Bolsas, porta-copos e peças para sua mesa — únicas como você.
-    </p>
-    <div class="hero-actions">
-      <a href="https://wa.me/5513991807579?text=Olá+Cris!+Vim+pelo+site+e+quero+fazer+um+pedido." target="_blank" class="btn-primary">
-        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Fazer Pedido
-      </a>
-      <a href="#categorias" class="btn-outline">Ver Coleção</a>
-    </div>
-  </div>
-  <div class="hero-image">
-    <img src="bolsa_hobo_cinza.webp" alt="Bolsa de crochê premium modelo Hobo na cor cinza" fetchpriority="high" loading="eager">
-    <div class="hero-badge">
-      <strong>100%</strong>
-      <span>Feito à Mão</span>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Bolsas Artesanais</span><span class="dot">✦</span>
-    <span>Porta-Copos</span><span class="dot">✦</span>
-    <span>Trilhos de Mesa</span><span class="dot">✦</span>
-    <span>Sousplat</span><span class="dot">✦</span>
-    <span>Feito com Amor</span><span class="dot">✦</span>
-    <span>Encomendas Personalizadas</span><span class="dot">✦</span>
-    <span>Crochê Premium</span><span class="dot">✦</span>
-    <span>Bolsas Artesanais</span><span class="dot">✦</span>
-    <span>Porta-Copos</span><span class="dot">✦</span>
-    <span>Trilhos de Mesa</span><span class="dot">✦</span>
-    <span>Sousplat</span><span class="dot">✦</span>
-    <span>Feito com Amor</span><span class="dot">✦</span>
-    <span>Encomendas Personalizadas</span><span class="dot">✦</span>
-    <span>Crochê Premium</span><span class="dot">✦</span>
-  </div>
-</div>
-
-<!-- SOBRE -->
-<section id="sobre">
-  <div class="sobre-image">
-    <img src="sousplat_vinho.webp" alt="Sousplat de crochê premium na cor vinho para mesa posta" loading="lazy">
-  </div>
-  <div class="sobre-content">
-    <p class="section-tag reveal">A Artesã</p>
-    <h2 class="section-title reveal reveal-delay-1">
-      Cada ponto<br>conta uma <em>história</em>
-    </h2>
-    <p class="sobre-text reveal reveal-delay-2">
-      Meu nome é Cris Vidal e o crochê é muito mais do que um trabalho para mim — 
-      é a minha forma de colocar amor e cuidado em cada peça que crio.
-    </p>
-    <p class="sobre-text reveal reveal-delay-2">
-      Utilizo fios e materiais cuidadosamente selecionados, combinados com acabamentos 
-      em couro legítimo para criar peças que unem tradição artesanal com elegância contemporânea.
-      Cada encomenda é única e feita especialmente para você.
-    </p>
-    <div class="sobre-stats reveal reveal-delay-3">
-      <div class="stat">
-        <strong>100%</strong>
-        <span>Artesanal</span>
-      </div>
-      <div class="stat">
-        <strong>∞</strong>
-        <span>Personalizado</span>
-      </div>
-      <div class="stat">
-        <strong>♡</strong>
-        <span>Feito com Amor</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CATEGORIAS -->
-<section id="categorias">
-  <div class="section-header">
-    <p class="section-tag reveal">Nossas Coleções</p>
-    <h2 class="section-title reveal reveal-delay-1">Encontre a peça <em>perfeita</em></h2>
-  </div>
-  <div class="cats-grid">
-    <div class="cat-card reveal">
-      <img src="bolsas_amarela_vermelha.webp" alt="Coleção de bolsas premium de crochê nas cores amarela e vermelha" loading="lazy">
-      <div class="cat-overlay">
-        <p class="cat-name">Bolsas</p>
-        <p class="cat-sub">Hobo · Crossbody · Necessaire</p>
-      </div>
-      <div class="cat-arrow">→</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-1">
-      <img src="porta_copos_croche.webp" alt="Conjunto de porta-copos redondos de crochê em várias cores" loading="lazy">
-      <div class="cat-overlay">
-        <p class="cat-name">Porta-Copos</p>
-        <p class="cat-sub">Redondos · Várias cores</p>
-      </div>
-      <div class="cat-arrow">→</div>
-    </div>
-    <div class="cat-card reveal reveal-delay-2">
-      <img src="trilho_mesa_croche.webp" alt="Trilho de mesa de crochê premium para decoração" loading="lazy">
-      <div class="cat-overlay">
-        <p class="cat-name">Mesa Posta</p>
-        <p class="cat-sub">Trilhos · Sousplat · Caminho de Mesa</p>
-      </div>
-      <div class="cat-arrow">→</div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUTOS -->
-<section id="produtos">
-  <div class="prods-header">
-    <div>
-      <p class="section-tag">Peças em Destaque</p>
-      <h2 class="section-title">Nossa <em>coleção</em></h2>
-    </div>
-    <a href="https://wa.me/5513991807579?text=Olá+Cris!+Quero+ver+todas+as+peças+disponíveis." target="_blank" class="btn-outline" style="white-space:nowrap">Ver Tudo</a>
-  </div>
-  <div class="prods-grid">
-
-    <div class="prod-card reveal">
-      <div class="prod-img">
-        <img src="bolsa_hobo_cinza.webp" alt="Bolsa de crochê modelo Hobo na cor cinza" loading="lazy">
-        <span class="prod-badge">Destaque</span>
-      </div>
-      <div class="prod-info">
-        <p class="prod-cat">Bolsas</p>
-        <h3 class="prod-name">Bolsa Hobo Cinza</h3>
-        <p class="prod-desc">Design arredondado com fecho em couro, alça longa. Elegante e prática.</p>
-        <div class="prod-footer">
-          <div class="prod-price"><small>Consulte</small>sob encomenda</div>
-          <a href="https://wa.me/5513991807579?text=Olá+Cris!+Tenho+interesse+na+Bolsa+Hobo+Cinza." target="_blank" class="btn-wpp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir
-          </a>
+    <div class="catalog-container">
+        <!-- Abas de Categoria -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('todas')">Ver Todas</button>
+            <button class="tab-btn" onclick="filterCategory('bolsas')">Bolsas</button>
+            <button class="tab-btn" onclick="filterCategory('porta-copos')">Porta-Copos</button>
+            <button class="tab-btn" onclick="filterCategory('mesa-posta')">Mesa Posta</button>
         </div>
-      </div>
-    </div>
 
-    <div class="prod-card reveal reveal-delay-1">
-      <div class="prod-img">
-        <img src="bolsa_hobo_cinza.webp" alt="Bolsa de crochê modelo Hobo na cor cinza" loading="lazy">
-        <span class="prod-badge">Kit</span>
-      </div>
-      <div class="prod-info">
-        <p class="prod-cat">Bolsas</p>
-        <h3 class="prod-name">Kit Bolsa + Necessaire</h3>
-        <p class="prod-desc">Conjunto perfeito com alça de couro dourada e necessaire combinando.</p>
-        <div class="prod-footer">
-          <div class="prod-price"><small>Consulte</small>sob encomenda</div>
-          <a href="https://wa.me/5513991807579?text=Olá+Cris!+Tenho+interesse+no+Kit+Bolsa+e+Necessaire." target="_blank" class="btn-wpp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir
-          </a>
+        <!-- Grid de Produtos -->
+        <div class="catalog-grid">
+            
+            <!-- BOLSAS -->
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Anna.jpeg" alt="Bolsa Anna"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Anna</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Anna." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Duda.jpeg" alt="Bolsa Duda"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Duda</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Duda." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Duda - cinza.jpeg" alt="Bolsa Duda Cinza"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Duda (Cinza)</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Duda Cinza." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Jô.jpeg" alt="Bolsa Jô"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Jô</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Jô." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Jô 1.jpeg" alt="Bolsa Jô Variante"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Jô (Modelo 1)</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Jô Modelo 1." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Neblina.jpeg" alt="Bolsa Neblina"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Neblina</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Neblina." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Neblina e porta óculos Madona.jpeg" alt="Bolsa Neblina e Porta Óculos"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Neblina + Madona</h3>
+                        <div class="product-tag">Bolsas / Acessórios</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o conjunto Bolsa Neblina e Porta Óculos Madona." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Oliva.jpeg" alt="Bolsa Oliva"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Oliva</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Oliva." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Outono.jpeg" alt="Bolsa Outono"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Outono</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Outono." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Rubi.jpeg" alt="Bolsa Rubi"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Rubi</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Rubi." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Rubi e Solaris.jpeg" alt="Bolsa Rubi e Solaris"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Rubi e Solaris</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o modelo Rubi e Solaris." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bolsas">
+                <div class="img-container"><img src="Bolsa Terra e Mar 1.jpeg" alt="Bolsa Terra e Mar"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bolsa Terra e Mar</h3>
+                        <div class="product-tag">Bolsas</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Terra e Mar." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- PORTA COPOS -->
+            <div class="product-card" data-category="porta-copos">
+                <div class="img-container"><img src="Porta Copos Essência.jpeg" alt="Porta Copos Essência"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Linha Essência</h3>
+                        <div class="product-tag">Porta-Copos</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a linha de Porta-Copos Essência." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- MESA POSTA -->
+            <div class="product-card" data-category="mesa-posta">
+                <div class="img-container"><img src="Sousplat Perola.jpeg" alt="Sousplat Pérola"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Sousplat Pérola</h3>
+                        <div class="product-tag">Mesa Posta</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Sousplat Pérola." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="mesa-posta">
+                <div class="img-container"><img src="Sousplat Perola 1.jpeg" alt="Sousplat Pérola Modelo 1"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Sousplat Pérola (Modelo 1)</h3>
+                        <div class="product-tag">Mesa Posta</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Sousplat Pérola Modelo 1." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="mesa-posta">
+                <div class="img-container"><img src="Suporte para Taça - Ani.jpeg" alt="Suporte para Taça Ani"></div>
+                <div class="product-info">
+                    <div>
+                        <h3>Suporte para Taça Ani</h3>
+                        <div class="product-tag">Mesa Posta / Acessórios</div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Suporte para Taça Ani." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                </div>
+            </div>
+
         </div>
-      </div>
     </div>
 
-    <div class="prod-card reveal reveal-delay-2">
-      <div class="prod-img">
-        <img src="bolsas_amarela_vermelha.webp" alt="Kit de bolsa e necessaire de crochê combinando" loading="lazy">
-      </div>
-      <div class="prod-info">
-        <p class="prod-cat">Bolsas</p>
-        <h3 class="prod-name">Bolsas Coloridas</h3>
-        <p class="prod-desc">Mostarda ou vinho — escolha sua cor favorita. Alça de couro ajustável.</p>
-        <div class="prod-footer">
-          <div class="prod-price"><small>Várias cores</small>sob encomenda</div>
-          <a href="https://wa.me/5513991807579?text=Olá+Cris!+Tenho+interesse+nas+Bolsas+Coloridas." target="_blank" class="btn-wpp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- Ícone Fixo do WhatsApp -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-fixed" target="_blank" title="Fale Comigo no WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
-    <div class="prod-card reveal reveal-delay-3">
-      <div class="prod-img">
-        <img src="bolsas_amarela_vermelha.webp" alt="Modelos de bolsas de crochê premium coloridas" loading="lazy">
-        <span class="prod-badge">Novo</span>
-      </div>
-      <div class="prod-info">
-        <p class="prod-cat">Mesa</p>
-        <h3 class="prod-name">Porta-Copos</h3>
-        <p class="prod-desc">Conjunto com 4 unidades. Disponível em várias cores para combinar com sua decoração.</p>
-        <div class="prod-footer">
-          <div class="prod-price"><small>Kit c/ 4 un.</small>sob encomenda</div>
-          <a href="https://wa.me/5513991807579?text=Olá+Cris!+Tenho+interesse+nos+Porta-Copos." target="_blank" class="btn-wpp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir
-          </a>
-        </div>
-      </div>
-    </div>
+    <footer>
+        <p>&copy; 2026 Cris Vidal Crochê. Feito à mão com elegância.</p>
+    </footer>
 
-  </div>
-</section>
+    <!-- Script para o filtro funcionar dinamicamente -->
+    <script>
+        function filterCategory(category) {
+            // Atualiza classe ativa dos botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-<!-- PROCESSO -->
-<section id="processo">
-  <div style="max-width:800px;margin:0 auto;text-align:center">
-    <p class="section-tag reveal">Como Funciona</p>
-    <h2 class="section-title reveal reveal-delay-1">Do fio à sua <em>porta</em></h2>
-  </div>
-  <div class="steps-grid">
-    <div class="step reveal">
-      <div class="step-num">01</div>
-      <div class="step-icon">💬</div>
-      <p class="step-title">Contato</p>
-      <p class="step-desc">Fale comigo pelo WhatsApp e escolha a peça, cor e tamanho que deseja.</p>
-    </div>
-    <div class="step reveal reveal-delay-1">
-      <div class="step-num">02</div>
-      <div class="step-icon">🎨</div>
-      <p class="step-title">Personalização</p>
-      <p class="step-desc">Definimos juntos todos os detalhes da sua peça exclusiva.</p>
-    </div>
-    <div class="step reveal reveal-delay-2">
-      <div class="step-num">03</div>
-      <div class="step-icon">🧶</div>
-      <p class="step-title">Produção</p>
-      <p class="step-desc">Cada ponto é dado com cuidado e dedicação. Arte que leva tempo e amor.</p>
-    </div>
-    <div class="step reveal reveal-delay-3">
-      <div class="step-num">04</div>
-      <div class="step-icon">📦</div>
-      <p class="step-title">Entrega</p>
-      <p class="step-desc">Sua peça chega embalada com carinho, pronta para encantar.</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALERIA -->
-<section id="galeria">
-  <div class="section-header">
-    <p class="section-tag reveal">Inspirações</p>
-    <h2 class="section-title reveal reveal-delay-1">Nossa <em>galeria</em></h2>
-  </div>
-  <div class="gallery-grid">
-    <div class="g-item reveal">
-      <img src="galeria_1.webp" alt="Inspiração de crochê premium Cris Vidal" loading="lazy">
-    </div>
-    <div class="g-item reveal reveal-delay-1">
-      <img src="galeria_2.webp" alt="Detalhes do artesanato em crochê Cris Vidal" loading="lazy">
-    </div>
-    <div class="g-item reveal reveal-delay-2">
-      <img src="galeria_3.webp" alt="Peças exclusivas de crochê premium Cris Vidal" loading="lazy">
-    </div>
-    <div class="g-item reveal reveal-delay-3">
-      <img src="galeria_4.webp" alt="Coleção de crochê de luxo Cris Vidal" loading="lazy">
-    </div>
-    <div class="g-item reveal reveal-delay-4">
-      <img src="galeria_5.webp" alt="Modelos exclusivos de crochê Cris Vidal" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section id="instagram">
-  <p class="section-tag reveal" style="justify-content:center">Siga nas Redes</p>
-  <h2 class="ig-handle reveal reveal-delay-1">
-    <a href="https://instagram.com/crisvidal.crochet" target="_blank">@crisvidal.crochet</a>
-  </h2>
-  <p class="ig-desc reveal reveal-delay-2">Acompanhe as novidades, bastidores e peças recém-finalizadas</p>
-  <a href="https://instagram.com/crisvidal.crochet" target="_blank" class="btn-instagram reveal reveal-delay-3">
-    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    Ver no Instagram
-  </a>
-</section>
-
-<!-- ENCOMENDA -->
-<section id="encomenda">
-  <p class="encomenda-tag reveal">Pronta para encomendar?</p>
-  <h2 class="encomenda-title reveal reveal-delay-1">
-    Sua peça <em>exclusiva</em><br>está a uma mensagem
-  </h2>
-  <p class="encomenda-desc reveal reveal-delay-2">
-    Atendo pelo WhatsApp com todo o carinho e atenção que você merece. 
-    Vamos conversar sobre cores, modelos e prazos.
-  </p>
-  <a href="https://wa.me/5513991807579?text=Olá+Cris!+Vim+pelo+site+e+quero+fazer+um+pedido." target="_blank" class="btn-wpp-big reveal reveal-delay-3">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Encomendar pelo WhatsApp
-  </a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Cris Vidal <span>Crochê</span></div>
-  <nav class="footer-links">
-    <a href="#sobre">Sobre</a>
-    <a href="#categorias">Categorias</a>
-    <a href="#produtos">Peças</a>
-    <a href="https://instagram.com/crisvidal.crochet" target="_blank">Instagram</a>
-    <a href="https://wa.me/5513991807579" target="_blank">WhatsApp</a>
-  </nav>
-  <p class="footer-copy">© 2024 Cris Vidal Crochê Artesanal Premium</p>
-</footer>
-
-<!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5513991807579?text=Olá+Cris!+Vim+pelo+site+e+gostaria+de+fazer+um+pedido." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script>
-  // Menu hambúrguer
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => observer.observe(el));
-
-  // Nav scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.style.padding = window.scrollY > 60 ? '.8rem 4rem' : '1.2rem 4rem';
-  });
-</script>
+            // Filtra os cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'todas') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
