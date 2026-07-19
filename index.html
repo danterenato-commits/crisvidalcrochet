@@ -4,118 +4,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cris Vidal | Crochê Artesanal Premium</title>
-    <meta name="description" content="Peças únicas de crochê feitas à mão com amor e dedicação. Bolsas, porta-copos, trilhos de mesa e muito mais. Encomendas pelo WhatsApp." />
+    <meta name="description" content="Peças exclusivas em crochê feitas à mão. Bolsas, porta-copos e mesa posta que unem sofisticação, afeto e design autoral." />
     <meta name="keywords" content="crochê artesanal, bolsas de crochê, porta copos crochê, trilho de mesa crochê, artesanato premium, Cris Vidal" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --cream: #F5EFE6;
-            --clay: #D8B4A0;
-            --terracotta: #A64B2A;
-            --dark-brown: #3E2723;
-            --charcoal: #212121;
-            --bg-light: #FAF8F5;
+            --cream: #FAF6F0;
+            --soft-gold: #D4AF37;
+            --terracotta: #8C4327;
+            --dark-brown: #2C1A11;
+            --text-dark: #333333;
+            --card-bg: #FFFFFF;
         }
         body {
             font-family: 'Jost', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--charcoal);
-            line-height: 1.6;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
         }
-        h1, h2, h3 {
+        h1, h2, h3, .premium-title {
             font-family: 'Cormorant Garamond', serif;
             color: var(--dark-brown);
+            font-weight: 400;
         }
+        
+        /* Cabeçalho Charmoso */
         header {
-            background-color: var(--cream);
-            padding: 2rem 1rem;
+            padding: 4rem 1rem 3rem 1rem;
             text-align: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: linear-gradient(to bottom, #F3ECE3, var(--cream));
         }
-        header h1 { font-size: 2.8rem; font-weight: 500; letter-spacing: 2px; }
-        header p { font-size: 1.1rem; color: #757575; font-style: italic; margin-top: 0.5rem; }
+        header h1 { font-size: 3.5rem; letter-spacing: 4px; margin-bottom: 0.5rem; }
+        header .subtitle { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; color: var(--terracotta); font-weight: 500; }
+        
+        /* Seção Conceito / Manifesto Premium */
+        .manifesto {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+        .manifesto p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+        }
+        .manifesto .divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--terracotta);
+            margin: 1.5rem auto;
+        }
+
+        /* Redes Sociais no Topo */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 0.95rem;
+            border: 1px solid rgba(44, 26, 17, 0.2);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        .social-btn:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        .social-btn img { width: 18px; height: 18px; }
 
         /* Categorias / Filtros */
-        .catalog-container { max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; }
-        .category-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .catalog-container { max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 1.5rem; }
+        .category-tabs { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3rem; flex-wrap: wrap; }
         .tab-btn {
-            background: white;
-            border: 1px solid var(--clay);
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
+            background: transparent;
+            border: 1px solid var(--dark-brown);
+            padding: 0.6rem 1.8rem;
+            font-size: 0.95rem;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 0;
             font-family: 'Jost', sans-serif;
             transition: all 0.3s ease;
             color: var(--dark-brown);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .tab-btn.active, .tab-btn:hover {
-            background-color: var(--terracotta);
-            color: white;
-            border-color: var(--terracotta);
-            box-shadow: 0 4px 12px rgba(166, 75, 42, 0.2);
+            background-color: var(--dark-brown);
+            color: var(--cream);
         }
 
         /* Grid do Catálogo */
         .catalog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
         }
         .product-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 0px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             display: flex;
             flex-direction: column;
+            border-bottom: 3px solid transparent;
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(44, 26, 17, 0.06);
+            border-bottom-color: var(--terracotta);
         }
         .img-container {
             width: 100%;
-            height: 350px;
-            background-color: #EFEFEF;
+            height: 380px;
+            background-color: #F3ECE3;
             overflow: hidden;
+            position: relative;
         }
         .img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .product-card:hover .img-container img { transform: scale(1.05); }
-        .product-info { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-info h3 { font-size: 1.6rem; margin-bottom: 0.5rem; font-weight: 500; }
-        .product-tag { font-size: 0.85rem; color: var(--clay); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; font-weight: 500; }
+        .product-card:hover .img-container img { transform: scale(1.04); }
+        
+        .product-info { padding: 1.8rem 1.5rem 1.5rem 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-tag { font-size: 0.8rem; color: var(--terracotta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.4rem; font-weight: 500; }
+        .product-info h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--dark-brown); letter-spacing: 1px; }
         
         .btn-order {
-            display: inline-block;
+            display: block;
             background-color: var(--dark-brown);
             color: white;
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            padding: 0.9rem 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: background-color 0.3s ease;
             margin-top: auto;
         }
         .btn-order:hover { background-color: var(--terracotta); }
 
-        /* WhatsApp Fixo */
+        /* WhatsApp Fixo Lateral */
         .whatsapp-fixed {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 35px;
+            right: 35px;
             background-color: #25D366;
             width: 60px;
             height: 60px;
@@ -123,28 +177,46 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             z-index: 1000;
             transition: transform 0.3s ease;
         }
         .whatsapp-fixed:hover { transform: scale(1.1); }
-        .whatsapp-fixed img { width: 32px; height: 32px; }
+        .whatsapp-fixed img { width: 30px; height: 30px; }
 
-        footer { text-align: center; padding: 3rem 1rem; color: #999; font-size: 0.9rem; border-top: 1px solid rgba(0,0,0,0.03); margin-top: 4rem; }
+        footer { text-align: center; padding: 4rem 1rem; color: #777; font-size: 0.9rem; background-color: #F3ECE3; margin-top: 5rem; letter-spacing: 1px; }
+        footer p { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Cris Vidal</h1>
-        <p>Crochê Artesanal Premium</p>
+        <div class="subtitle">Crochê Artesanal Premium</div>
     </header>
+
+    <div class="manifesto">
+        <p>"Cada ponto carrega uma história, cada linha reflete dedicação. Peças exclusivas tecidas com a alma, desenhadas para vestir a sua rotina e a sua casa de afeto, elegância e autenticidade."</p>
+        <div class="divider"></div>
+        
+        <!-- Redes Sociais Reinseridas -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/crisvidalcrochet" target="_blank" class="social-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+                Siga no Instagram
+            </a>
+            <a href="https://wa.me/5513991807579" target="_blank" class="social-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                Atendimento Direto
+            </a>
+        </div>
+    </div>
 
     <div class="catalog-container">
         <!-- Abas de Categoria -->
         <div class="category-tabs">
-            <button class="tab-btn active" onclick="filterCategory('todas')">Ver Todas</button>
-            <button class="tab-btn" onclick="filterCategory('bolsas')">Bolsas</button>
+            <button class="tab-btn active" onclick="filterCategory('todas')">Coleção Completa</button>
+            <button class="tab-btn" onclick="filterCategory('bolsas')">Bolsas Autoriais</button>
             <button class="tab-btn" onclick="filterCategory('porta-copos')">Porta-Copos</button>
             <button class="tab-btn" onclick="filterCategory('mesa-posta')">Mesa Posta</button>
         </div>
@@ -157,10 +229,10 @@
                 <div class="img-container"><img src="Bolsa Anna.jpeg" alt="Bolsa Anna"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Anna</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Anna." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Anna%20no%20catálogo%20e%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -168,10 +240,10 @@
                 <div class="img-container"><img src="Bolsa Duda.jpeg" alt="Bolsa Duda"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Duda</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Duda." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Duda%20no%20catálogo%20e%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -179,10 +251,10 @@
                 <div class="img-container"><img src="Bolsa Duda - cinza.jpeg" alt="Bolsa Duda Cinza"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Duda (Cinza)</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Duda Cinza." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Amei%20a%20Bolsa%20Duda%20Cinza%20do%20catálogo,%20pode%20me%20passar%20mais%20detalhes?" target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -190,10 +262,10 @@
                 <div class="img-container"><img src="Bolsa Jô.jpeg" alt="Bolsa Jô"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Jô</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Jô." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Jô%20que%20vi%20no%20seu%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -201,10 +273,10 @@
                 <div class="img-container"><img src="Bolsa Jô 1.jpeg" alt="Bolsa Jô Variante"></div>
                 <div class="product-info">
                     <div>
-                        <h3>Bolsa Jô (Modelo 1)</h3>
-                        <div class="product-tag">Bolsas</div>
+                        <div class="product-tag">Design Exclusivo</div>
+                        <h3>Bolsa Jô (Variante)</h3>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Jô Modelo 1." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Vi%20a%20Bolsa%20Jô%20Variante%20no%20catálogo%20e%20fiquei%20interessada." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -212,10 +284,10 @@
                 <div class="img-container"><img src="Bolsa Neblina.jpeg" alt="Bolsa Neblina"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Neblina</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Neblina." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Quero%20saber%20mais%20sobre%20a%20Bolsa%20Neblina%20do%20seu%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -223,10 +295,10 @@
                 <div class="img-container"><img src="Bolsa Neblina e porta óculos Madona.jpeg" alt="Bolsa Neblina e Porta Óculos"></div>
                 <div class="product-info">
                     <div>
-                        <h3>Bolsa Neblina + Madona</h3>
-                        <div class="product-tag">Bolsas / Acessórios</div>
+                        <div class="product-tag">Conjunto Especial</div>
+                        <h3>Duo Neblina + Madona</h3>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o conjunto Bolsa Neblina e Porta Óculos Madona." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20lindo%20o%20conjunto%20Bolsa%20Neblina%20e%20Porta%20Óculos%20Madona.%20Como%20faço%20para%20encomendar?" target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -234,10 +306,10 @@
                 <div class="img-container"><img src="Bolsa Oliva.jpeg" alt="Bolsa Oliva"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Oliva</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Oliva." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Oliva%20do%20seu%20site." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -245,10 +317,10 @@
                 <div class="img-container"><img src="Bolsa Outono.jpeg" alt="Bolsa Outono"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Outono</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Outono." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20interessei%20pela%20Bolsa%20Outono,%20está%20disponível%20para%20encomenda?" target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -256,10 +328,10 @@
                 <div class="img-container"><img src="Bolsa Rubi.jpeg" alt="Bolsa Rubi"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Rubi</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Rubi." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Rubi%20que%20vi%20no%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -267,10 +339,10 @@
                 <div class="img-container"><img src="Bolsa Rubi e Solaris.jpeg" alt="Bolsa Rubi e Solaris"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Rubi e Solaris</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o modelo Rubi e Solaris." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20belíssimo%20o%20modelo%20Rubi%20e%20Solaris,%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -278,10 +350,10 @@
                 <div class="img-container"><img src="Bolsa Terra e Mar 1.jpeg" alt="Bolsa Terra e Mar"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Design Exclusivo</div>
                         <h3>Bolsa Terra e Mar</h3>
-                        <div class="product-tag">Bolsas</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar a Bolsa Terra e Mar." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20solicitar%20a%20produção%20da%20Bolsa%20Terra%20e%20Mar." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -290,10 +362,10 @@
                 <div class="img-container"><img src="Porta Copos Essência.jpeg" alt="Porta Copos Essência"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Aconchego para o Lar</div>
                         <h3>Linha Essência</h3>
-                        <div class="product-tag">Porta-Copos</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a linha de Porta-Copos Essência." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20saber%20mais%20e%20encomendar%20os%20Porta-Copos%20da%20Linha%20Essência." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -302,10 +374,10 @@
                 <div class="img-container"><img src="Sousplat Perola.jpeg" alt="Sousplat Pérola"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Mesa Posta Elegante</div>
                         <h3>Sousplat Pérola</h3>
-                        <div class="product-tag">Mesa Posta</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Sousplat Pérola." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20o%20Sousplat%20Pérola%20que%20vi%20na%20sua%20coleção." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -313,10 +385,10 @@
                 <div class="img-container"><img src="Sousplat Perola 1.jpeg" alt="Sousplat Pérola Modelo 1"></div>
                 <div class="product-info">
                     <div>
-                        <h3>Sousplat Pérola (Modelo 1)</h3>
-                        <div class="product-tag">Mesa Posta</div>
+                        <div class="product-tag">Mesa Posta Elegante</div>
+                        <h3>Sousplat Pérola (Opção 1)</h3>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Sousplat Pérola Modelo 1." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20os%20Sousplats%20Pérola%20(Opção%201)." target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -324,10 +396,10 @@
                 <div class="img-container"><img src="Suporte para Taça - Ani.jpeg" alt="Suporte para Taça Ani"></div>
                 <div class="product-info">
                     <div>
+                        <div class="product-tag">Detalhes Decoração</div>
                         <h3>Suporte para Taça Ani</h3>
-                        <div class="product-tag">Mesa Posta / Acessórios</div>
                     </div>
-                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de encomendar o Suporte para Taça Ani." target="_blank" class="btn-order">Encomendar via WhatsApp</a>
+                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20o%20Suporte%20para%20Taça%20Ani%20super%20charmoso,%20como%20faço%20para%20adquirir?" target="_blank" class="btn-order">Solicitar Encomenda</a>
                 </div>
             </div>
 
@@ -335,23 +407,21 @@
     </div>
 
     <!-- Ícone Fixo do WhatsApp -->
-    <a href="https://wa.me/5511999999999" class="whatsapp-fixed" target="_blank" title="Fale Comigo no WhatsApp">
+    <a href="https://wa.me/5513991807579" class="whatsapp-fixed" target="_blank" title="Fale Comigo no WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
     <footer>
-        <p>&copy; 2026 Cris Vidal Crochê. Feito à mão com elegância.</p>
+        <p>&copy; 2026 Cris Vidal Crochê. Feito à mão com afeto e elegância.</p>
     </footer>
 
     <!-- Script para o filtro funcionar dinamicamente -->
     <script>
         function filterCategory(category) {
-            // Atualiza classe ativa dos botões
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Filtra os cards
             const cards = document.querySelectorAll('.product-card');
             cards.forEach(card => {
                 if (category === 'todas') {
