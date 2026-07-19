@@ -2,439 +2,1559 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cris Vidal | Crochê Artesanal Premium</title>
-    <meta name="description" content="Peças exclusivas em crochê feitas à mão. Bolsas, porta-copos e mesa posta que unem sofisticação, afeto e design autoral." />
-    <meta name="keywords" content="crochê artesanal, bolsas de crochê, porta copos crochê, trilho de mesa crochê, artesanato premium, Cris Vidal" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cris Vidal Crochê | Arte feita com a mão</title>
+    <meta
+        name="description"
+        content="Bolsas, mesa posta e acessórios em crochê artesanal, criados com elegância, cuidado e identidade autoral por Cris Vidal Crochê."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#2c1a11" />
+    <link rel="canonical" href="https://crisvidalcrochet.com.br/" />
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cris Vidal Crochê | Arte feita com a mão" />
+    <meta
+        property="og:description"
+        content="Peças artesanais em crochê que unem afeto, elegância e design autoral."
+    />
+    <meta property="og:url" content="https://crisvidalcrochet.com.br/" />
+    <meta property="og:site_name" content="Cris Vidal Crochê" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cris Vidal Crochê | Arte feita com a mão" />
+    <meta
+        name="twitter:description"
+        content="Peças artesanais em crochê que unem afeto, elegância e design autoral."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
 
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --cream: #FAF6F0;
-            --soft-gold: #D4AF37;
-            --terracotta: #8C4327;
-            --dark-brown: #2C1A11;
-            --text-dark: #333333;
-            --card-bg: #FFFFFF;
-        }
-        body {
-            font-family: 'Jost', sans-serif;
-            background-color: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-        h1, h2, h3, .premium-title {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--dark-brown);
-            font-weight: 400;
-        }
-        
-        /* Cabeçalho Charmoso */
-        header {
-            padding: 4rem 1rem 3rem 1rem;
-            text-align: center;
-            background: linear-gradient(to bottom, #F3ECE3, var(--cream));
-        }
-        header h1 { font-size: 3.5rem; letter-spacing: 4px; margin-bottom: 0.5rem; }
-        header .subtitle { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; color: var(--terracotta); font-weight: 500; }
-        
-        /* Seção Conceito / Manifesto Premium */
-        .manifesto {
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            text-align: center;
-            padding: 0 1.5rem;
-        }
-        .manifesto p {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.8;
-        }
-        .manifesto .divider {
-            width: 60px;
-            height: 1px;
-            background-color: var(--terracotta);
-            margin: 1.5rem auto;
+        *, *::before, *::after {
+            box-sizing: border-box;
         }
 
-        /* Redes Sociais no Topo */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+        :root {
+            --cream: #faf6f0;
+            --cream-dark: #f1e8dc;
+            --paper: #fffdf9;
+            --gold: #b78a3e;
+            --terracotta: #8c4327;
+            --terracotta-dark: #71351f;
+            --brown: #2c1a11;
+            --text: #3b332f;
+            --muted: #716761;
+            --line: rgba(44, 26, 17, 0.14);
+            --shadow-sm: 0 12px 32px rgba(44, 26, 17, 0.07);
+            --shadow-lg: 0 22px 60px rgba(44, 26, 17, 0.12);
+            --radius-sm: 6px;
+            --radius-md: 16px;
+            --radius-pill: 999px;
+            --container: 1200px;
         }
-        .social-btn {
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            font-family: "Jost", sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(183, 138, 62, 0.08), transparent 28rem),
+                radial-gradient(circle at 90% 20%, rgba(140, 67, 39, 0.07), transparent 32rem);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        h1, h2, h3, p {
+            margin-top: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: "Cormorant Garamond", serif;
+            color: var(--brown);
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .container {
+            width: min(calc(100% - 2rem), var(--container));
+            margin-inline: auto;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 0.75rem;
+            left: 0.75rem;
+            z-index: 9999;
+            padding: 0.75rem 1rem;
+            color: white;
+            background: var(--brown);
+            transform: translateY(-180%);
+            transition: transform 0.2s ease;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(140, 67, 39, 0.42);
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(44, 26, 17, 0.08);
+            background: rgba(250, 246, 240, 0.92);
+            backdrop-filter: blur(16px);
+        }
+
+        .header-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.65rem, 3vw, 2.1rem);
+            color: var(--brown);
+            letter-spacing: 0.025em;
+        }
+
+        .brand-tagline {
+            margin-top: 0.35rem;
+            color: var(--terracotta);
+            font-size: 0.67rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.7rem;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: var(--brown);
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .main-nav a:not(.header-cta)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: -0.4rem;
+            height: 1px;
+            background: var(--terracotta);
+            transition: right 0.25s ease;
+        }
+
+        .main-nav a:not(.header-cta):hover::after {
+            right: 0;
+        }
+
+        .button {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 0.55rem;
+            min-height: 48px;
+            padding: 0.82rem 1.25rem;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
             text-decoration: none;
-            color: var(--dark-brown);
-            font-size: 0.95rem;
-            border: 1px solid rgba(44, 26, 17, 0.2);
-            padding: 0.6rem 1.5rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            background-color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
         }
-        .social-btn:hover {
-            border-color: var(--terracotta);
-            color: var(--terracotta);
+
+        .button:hover {
             transform: translateY(-2px);
         }
-        .social-btn img { width: 18px; height: 18px; }
 
-        /* Categorias / Filtros */
-        .catalog-container { max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 1.5rem; }
-        .category-tabs { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .tab-btn {
+        .button-dark {
+            color: white;
+            background: var(--brown);
+        }
+
+        .button-dark:hover {
+            background: var(--terracotta);
+            box-shadow: 0 10px 28px rgba(140, 67, 39, 0.2);
+        }
+
+        .button-outline {
+            color: var(--brown);
+            border-color: rgba(44, 26, 17, 0.32);
             background: transparent;
-            border: 1px solid var(--dark-brown);
-            padding: 0.6rem 1.8rem;
-            font-size: 0.95rem;
-            cursor: pointer;
-            border-radius: 0;
-            font-family: 'Jost', sans-serif;
-            transition: all 0.3s ease;
-            color: var(--dark-brown);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .tab-btn.active, .tab-btn:hover {
-            background-color: var(--dark-brown);
-            color: var(--cream);
         }
 
-        /* Grid do Catálogo */
+        .button-outline:hover {
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .header-cta {
+            min-height: 42px;
+            padding-inline: 1rem;
+            color: white !important;
+            background: var(--brown);
+            border-radius: var(--radius-pill);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 460px;
+            aspect-ratio: 1;
+            right: -190px;
+            top: 12%;
+            border: 1px solid rgba(183, 138, 62, 0.22);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 35px rgba(183, 138, 62, 0.035),
+                0 0 0 70px rgba(183, 138, 62, 0.025);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(270px, 0.85fr);
+            align-items: center;
+            gap: clamp(2rem, 7vw, 7rem);
+        }
+
+        .eyebrow {
+            margin-bottom: 1.2rem;
+            color: var(--terracotta);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            margin-bottom: 1.5rem;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            letter-spacing: -0.035em;
+        }
+
+        .hero h1 em {
+            color: var(--terracotta);
+            font-weight: 400;
+        }
+
+        .hero-copy {
+            max-width: 650px;
+            margin-bottom: 2rem;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.5vw, 1.18rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+        }
+
+        .hero-signature {
+            position: relative;
+            min-height: 360px;
+            display: grid;
+            place-items: center;
+        }
+
+        .signature-card {
+            position: relative;
+            width: min(100%, 390px);
+            padding: clamp(2rem, 4vw, 3.3rem);
+            border: 1px solid rgba(44, 26, 17, 0.12);
+            border-radius: 45% 45% 12px 12px / 30% 30% 12px 12px;
+            background:
+                linear-gradient(145deg, rgba(255,255,255,0.86), rgba(241,232,220,0.72));
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .signature-mark {
+            width: 70px;
+            height: 1px;
+            margin: 0 auto 1.6rem;
+            background: var(--gold);
+        }
+
+        .signature-card blockquote {
+            margin: 0;
+            font-family: "Cormorant Garamond", serif;
+            color: var(--brown);
+            font-size: clamp(1.6rem, 3.3vw, 2.35rem);
+            font-style: italic;
+            line-height: 1.25;
+        }
+
+        .signature-card p {
+            margin: 1.5rem 0 0;
+            color: var(--terracotta);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .trust-strip {
+            border-block: 1px solid var(--line);
+            background: rgba(255, 253, 249, 0.6);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .trust-item {
+            padding: 1.35rem 1rem;
+            text-align: center;
+        }
+
+        .trust-item + .trust-item {
+            border-left: 1px solid var(--line);
+        }
+
+        .trust-item strong {
+            display: block;
+            color: var(--brown);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        .trust-item span {
+            color: var(--muted);
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .section {
+            padding: clamp(4.5rem, 9vw, 8rem) 0;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 2.6rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 1rem;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            letter-spacing: -0.025em;
+        }
+
+        .section-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .filter-button {
+            min-height: 44px;
+            padding: 0.65rem 1.2rem;
+            border: 1px solid rgba(44, 26, 17, 0.22);
+            border-radius: var(--radius-pill);
+            color: var(--brown);
+            background: rgba(255, 255, 255, 0.48);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-button:hover,
+        .filter-button[aria-pressed="true"] {
+            color: white;
+            border-color: var(--brown);
+            background: var(--brown);
+        }
+
+        .results-status {
+            min-height: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--muted);
+            font-size: 0.86rem;
+            text-align: center;
+        }
+
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(1.2rem, 3vw, 2.2rem);
         }
+
         .product-card {
-            background: var(--card-bg);
-            border-radius: 0px;
+            min-width: 0;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
             display: flex;
             flex-direction: column;
-            border-bottom: 3px solid transparent;
+            border: 1px solid rgba(44, 26, 17, 0.08);
+            border-radius: var(--radius-md);
+            background: var(--paper);
+            box-shadow: var(--shadow-sm);
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
         }
+
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(44, 26, 17, 0.06);
-            border-bottom-color: var(--terracotta);
+            transform: translateY(-7px);
+            border-color: rgba(140, 67, 39, 0.22);
+            box-shadow: var(--shadow-lg);
         }
-        .img-container {
-            width: 100%;
-            height: 380px;
-            background-color: #F3ECE3;
-            overflow: hidden;
+
+        .product-card[hidden] {
+            display: none;
+        }
+
+        .product-media {
             position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            background: var(--cream-dark);
         }
-        .img-container img {
+
+        .product-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(44, 26, 17, 0.08), transparent 35%);
+        }
+
+        .product-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.65s cubic-bezier(.2,.7,.2,1);
         }
-        .product-card:hover .img-container img { transform: scale(1.04); }
-        
-        .product-info { padding: 1.8rem 1.5rem 1.5rem 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-tag { font-size: 0.8rem; color: var(--terracotta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.4rem; font-weight: 500; }
-        .product-info h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--dark-brown); letter-spacing: 1px; }
-        
-        .btn-order {
-            display: block;
-            background-color: var(--dark-brown);
-            color: white;
-            text-decoration: none;
-            padding: 0.9rem 1.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
-            margin-top: auto;
-        }
-        .btn-order:hover { background-color: var(--terracotta); }
 
-        /* WhatsApp Fixo Lateral */
+        .product-card:hover .product-media img {
+            transform: scale(1.045);
+        }
+
+        .product-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.4rem;
+            padding: 1.45rem;
+        }
+
+        .product-tag {
+            margin-bottom: 0.35rem;
+            color: var(--terracotta);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .product-content h3 {
+            margin-bottom: 0.65rem;
+            font-size: clamp(1.8rem, 3vw, 2.35rem);
+        }
+
+        .product-note {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .product-cta {
+            width: 100%;
+        }
+
+        .about {
+            background: var(--brown);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: clamp(2rem, 7vw, 7rem);
+        }
+
+        .about .eyebrow {
+            color: #dfb56e;
+        }
+
+        .about h2 {
+            margin-bottom: 1.4rem;
+            color: white;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+        }
+
+        .about p {
+            max-width: 680px;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-card {
+            padding: clamp(2rem, 5vw, 4rem);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .about-card blockquote {
+            margin: 0;
+            color: white;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-style: italic;
+            line-height: 1.25;
+        }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            padding: clamp(2rem, 5vw, 4rem);
+            border: 1px solid rgba(44, 26, 17, 0.1);
+            border-radius: var(--radius-md);
+            background: var(--paper);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-panel h2 {
+            margin-bottom: 0.65rem;
+            font-size: clamp(2.4rem, 5vw, 4.3rem);
+        }
+
+        .contact-panel p {
+            max-width: 680px;
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
         .whatsapp-fixed {
             position: fixed;
-            bottom: 35px;
-            right: 35px;
-            background-color: #25D366;
-            width: 60px;
-            height: 60px;
+            right: max(1rem, env(safe-area-inset-right));
+            bottom: max(1rem, env(safe-area-inset-bottom));
+            z-index: 90;
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transition: transform 0.3s ease;
+            color: white;
+            background: #1fae54;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .whatsapp-fixed:hover { transform: scale(1.1); }
-        .whatsapp-fixed img { width: 30px; height: 30px; }
 
-        footer { text-align: center; padding: 4rem 1rem; color: #777; font-size: 0.9rem; background-color: #F3ECE3; margin-top: 5rem; letter-spacing: 1px; }
-        footer p { margin-bottom: 0.5rem; }
+        .whatsapp-fixed:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.26);
+        }
+
+        .whatsapp-fixed svg {
+            width: 29px;
+            height: 29px;
+            fill: currentColor;
+        }
+
+        .site-footer {
+            padding: 3.2rem 0 6rem;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            background: var(--cream-dark);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            align-items: flex-end;
+        }
+
+        .footer-brand {
+            margin-bottom: 0.5rem;
+            color: var(--brown);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+        }
+
+        .site-footer p {
+            margin-bottom: 0;
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--terracotta);
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        @media (max-width: 980px) {
+            .main-nav a:not(.header-cta) {
+                display: none;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-signature {
+                min-height: auto;
+            }
+
+            .catalog-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                width: min(calc(100% - 1.25rem), var(--container));
+            }
+
+            .header-inner {
+                min-height: 68px;
+            }
+
+            .brand-tagline {
+                font-size: 0.58rem;
+                letter-spacing: 0.15em;
+            }
+
+            .header-cta {
+                min-height: 38px;
+                padding-inline: 0.85rem;
+                font-size: 0.69rem;
+            }
+
+            .hero {
+                padding-top: 3.7rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.1rem, 16vw, 4.8rem);
+            }
+
+            .hero-actions .button {
+                width: 100%;
+            }
+
+            .signature-card {
+                border-radius: 120px 120px 12px 12px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item + .trust-item {
+                border-left: 0;
+                border-top: 1px solid var(--line);
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                max-width: 520px;
+                width: 100%;
+                margin-inline: auto;
+            }
+
+            .filter-bar {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding: 0.2rem 0 0.75rem;
+                scrollbar-width: thin;
+            }
+
+            .filter-button {
+                flex: 0 0 auto;
+            }
+
+            .contact-actions,
+            .contact-actions .button {
+                width: 100%;
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .footer-links {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
-</head>
-<body>
 
-    <header>
-        <h1>Cris Vidal</h1>
-        <div class="subtitle">Crochê Artesanal Premium</div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cris Vidal Crochê",
+        "url": "https://crisvidalcrochet.com.br/",
+        "slogan": "Arte feita com a mão",
+        "sameAs": [
+            "https://www.instagram.com/crisvidalcrochet"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-13-99180-7579",
+            "contactType": "customer service",
+            "availableLanguage": "Portuguese"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Cris Vidal Crochê — página inicial">
+                <span class="brand-name">Cris Vidal Crochê</span>
+                <span class="brand-tagline">Arte feita com a mão</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="#catalogo">Coleção</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+                <a
+                    class="header-cta"
+                    href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Conheci%20seu%20site%20e%20gostaria%20de%20mais%20informações."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <div class="manifesto">
-        <p>"Cada ponto carrega uma história, cada linha reflete dedicação. Peças exclusivas tecidas com a alma, desenhadas para vestir a sua rotina e a sua casa de afeto, elegância e autenticidade."</p>
-        <div class="divider"></div>
-        
-        <!-- Redes Sociais Reinseridas -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/crisvidalcrochet" target="_blank" class="social-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
-                Siga no Instagram
-            </a>
-            <a href="https://wa.me/5513991807579" target="_blank" class="social-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                Atendimento Direto
-            </a>
-        </div>
-    </div>
+    <main id="conteudo">
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Crochê artesanal contemporâneo</p>
+                    <h1>Peças que transformam fios em <em>afeto.</em></h1>
+                    <p class="hero-copy">
+                        Bolsas, acessórios e itens para a casa criados manualmente,
+                        com cuidado nos detalhes, identidade autoral e elegância atemporal.
+                    </p>
 
-    <div class="catalog-container">
-        <!-- Abas de Categoria -->
-        <div class="category-tabs">
-            <button class="tab-btn active" onclick="filterCategory('todas')">Coleção Completa</button>
-            <button class="tab-btn" onclick="filterCategory('bolsas')">Bolsas Autoriais</button>
-            <button class="tab-btn" onclick="filterCategory('porta-copos')">Porta-Copos</button>
-            <button class="tab-btn" onclick="filterCategory('mesa-posta')">Mesa Posta</button>
-        </div>
+                    <div class="hero-actions">
+                        <a class="button button-dark" href="#catalogo">
+                            Conhecer a coleção
+                            <span aria-hidden="true">↓</span>
+                        </a>
+                        <a
+                            class="button button-outline"
+                            href="https://www.instagram.com/crisvidalcrochet"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver Instagram
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
 
-        <!-- Grid de Produtos -->
-        <div class="catalog-grid">
-            
-            <!-- BOLSAS -->
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Anna.jpeg" alt="Bolsa Anna"></div>
-                <div class="product-info">
+                <div class="hero-signature" aria-label="Manifesto da marca">
+                    <div class="signature-card">
+                        <div class="signature-mark" aria-hidden="true"></div>
+                        <blockquote>
+                            “Cada ponto carrega uma história.”
+                        </blockquote>
+                        <p>Cris Vidal Crochê</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Diferenciais da marca">
+            <div class="container trust-grid">
+                <div class="trust-item">
+                    <strong>Feito à mão</strong>
+                    <span>Cuidado em cada detalhe</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Design autoral</strong>
+                    <span>Peças com identidade</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Atendimento direto</strong>
+                    <span>Conversa pelo WhatsApp</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="catalogo">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Coleção Cris Vidal</p>
+                    <h2>Escolha a peça que combina com você.</h2>
+                    <p>
+                        Explore as categorias e fale diretamente com a Cris para consultar
+                        disponibilidade, personalização e prazo.
+                    </p>
+                </div>
+
+                <div class="filter-bar" role="group" aria-label="Filtrar produtos por categoria">
+                    <button class="filter-button" type="button" data-filter="todas" aria-pressed="true">
+                        Coleção completa
+                    </button>
+                    <button class="filter-button" type="button" data-filter="bolsas" aria-pressed="false">
+                        Bolsas
+                    </button>
+                    <button class="filter-button" type="button" data-filter="porta-copos" aria-pressed="false">
+                        Porta-copos
+                    </button>
+                    <button class="filter-button" type="button" data-filter="mesa-posta" aria-pressed="false">
+                        Mesa posta
+                    </button>
+                </div>
+
+                <p class="results-status" id="results-status" role="status" aria-live="polite">
+                    Exibindo 16 peças.
+                </p>
+
+                <div class="catalog-grid" id="catalog-grid">
+                    
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Anna.jpeg"
+                        alt="Bolsa Anna artesanal em crochê"
+                        loading="eager"
+                        decoding="async" fetchpriority="high"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Anna</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Anna%20no%20catálogo%20e%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Anna%20no%20catálogo%20e%20gostaria%20de%20encomendar."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Anna pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Duda.jpeg" alt="Bolsa Duda"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Duda.jpeg"
+                        alt="Bolsa Duda artesanal em crochê"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Duda</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Duda%20no%20catálogo%20e%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20apaixonei%20pela%20Bolsa%20Duda%20no%20catálogo%20e%20gostaria%20de%20encomendar."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Duda pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Duda - cinza.jpeg" alt="Bolsa Duda Cinza"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Duda - cinza.jpeg"
+                        alt="Bolsa Duda cinza artesanal em crochê"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
-                        <h3>Bolsa Duda (Cinza)</h3>
+                        <p class="product-tag">Design exclusivo</p>
+                        <h3>Bolsa Duda — Cinza</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Amei%20a%20Bolsa%20Duda%20Cinza%20do%20catálogo,%20pode%20me%20passar%20mais%20detalhes?" target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Amei%20a%20Bolsa%20Duda%20Cinza%20do%20catálogo,%20pode%20me%20passar%20mais%20detalhes?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Duda — Cinza pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Jô.jpeg" alt="Bolsa Jô"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Jô.jpeg"
+                        alt="Bolsa Jô artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Jô</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Jô%20que%20vi%20no%20seu%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Jô%20que%20vi%20no%20seu%20catálogo."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Jô pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Jô 1.jpeg" alt="Bolsa Jô Variante"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Jô 1.jpeg"
+                        alt="Variação da Bolsa Jô artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
-                        <h3>Bolsa Jô (Variante)</h3>
+                        <p class="product-tag">Design exclusivo</p>
+                        <h3>Bolsa Jô — Variante</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Vi%20a%20Bolsa%20Jô%20Variante%20no%20catálogo%20e%20fiquei%20interessada." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Vi%20a%20Bolsa%20Jô%20Variante%20no%20catálogo%20e%20fiquei%20interessada."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Jô — Variante pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Neblina.jpeg" alt="Bolsa Neblina"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Neblina.jpeg"
+                        alt="Bolsa Neblina artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Neblina</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Quero%20saber%20mais%20sobre%20a%20Bolsa%20Neblina%20do%20seu%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Quero%20saber%20mais%20sobre%20a%20Bolsa%20Neblina%20do%20seu%20catálogo."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Neblina pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Neblina e porta óculos Madona.jpeg" alt="Bolsa Neblina e Porta Óculos"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Neblina e porta óculos Madona.jpeg"
+                        alt="Conjunto Bolsa Neblina e porta-óculos Madona em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Conjunto Especial</div>
+                        <p class="product-tag">Conjunto especial</p>
                         <h3>Duo Neblina + Madona</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20lindo%20o%20conjunto%20Bolsa%20Neblina%20e%20Porta%20Óculos%20Madona.%20Como%20faço%20para%20encomendar?" target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20lindo%20o%20conjunto%20Bolsa%20Neblina%20e%20Porta%20Óculos%20Madona.%20Como%20faço%20para%20encomendar?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Duo Neblina + Madona pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Oliva.jpeg" alt="Bolsa Oliva"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Oliva.jpeg"
+                        alt="Bolsa Oliva artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Oliva</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Oliva%20do%20seu%20site." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Oliva%20do%20seu%20site."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Oliva pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Outono.jpeg" alt="Bolsa Outono"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Outono.jpeg"
+                        alt="Bolsa Outono artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Outono</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20interessei%20pela%20Bolsa%20Outono,%20está%20disponível%20para%20encomenda?" target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Me%20interessei%20pela%20Bolsa%20Outono,%20está%20disponível%20para%20encomenda?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Outono pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Rubi.jpeg" alt="Bolsa Rubi"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Rubi.jpeg"
+                        alt="Bolsa Rubi artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Rubi</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Rubi%20que%20vi%20no%20catálogo." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20a%20Bolsa%20Rubi%20que%20vi%20no%20catálogo."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Rubi pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Rubi e Solaris.jpeg" alt="Bolsa Rubi e Solaris"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Rubi e Solaris.jpeg"
+                        alt="Bolsas Rubi e Solaris artesanais em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
-                        <h3>Bolsa Rubi e Solaris</h3>
+                        <p class="product-tag">Design exclusivo</p>
+                        <h3>Rubi e Solaris</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20belíssimo%20o%20modelo%20Rubi%20e%20Solaris,%20gostaria%20de%20encomendar." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20belíssimo%20o%20modelo%20Rubi%20e%20Solaris,%20gostaria%20de%20encomendar."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Rubi e Solaris pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="bolsas">
-                <div class="img-container"><img src="Bolsa Terra e Mar 1.jpeg" alt="Bolsa Terra e Mar"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="bolsas">
+                <div class="product-media">
+                    <img
+                        src="Bolsa Terra e Mar 1.jpeg"
+                        alt="Bolsa Terra e Mar artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Design Exclusivo</div>
+                        <p class="product-tag">Design exclusivo</p>
                         <h3>Bolsa Terra e Mar</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20solicitar%20a%20produção%20da%20Bolsa%20Terra%20e%20Mar." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20solicitar%20a%20produção%20da%20Bolsa%20Terra%20e%20Mar."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Bolsa Terra e Mar pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <!-- PORTA COPOS -->
-            <div class="product-card" data-category="porta-copos">
-                <div class="img-container"><img src="Porta Copos Essência.jpeg" alt="Porta Copos Essência"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="porta-copos">
+                <div class="product-media">
+                    <img
+                        src="Porta Copos Essência.jpeg"
+                        alt="Porta-copos Linha Essência em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Aconchego para o Lar</div>
+                        <p class="product-tag">Aconchego para o lar</p>
                         <h3>Linha Essência</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20saber%20mais%20e%20encomendar%20os%20Porta-Copos%20da%20Linha%20Essência." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20saber%20mais%20e%20encomendar%20os%20Porta-Copos%20da%20Linha%20Essência."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Linha Essência pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <!-- MESA POSTA -->
-            <div class="product-card" data-category="mesa-posta">
-                <div class="img-container"><img src="Sousplat Perola.jpeg" alt="Sousplat Pérola"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="mesa-posta">
+                <div class="product-media">
+                    <img
+                        src="Sousplat Perola.jpeg"
+                        alt="Sousplat Pérola artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Mesa Posta Elegante</div>
+                        <p class="product-tag">Mesa posta elegante</p>
                         <h3>Sousplat Pérola</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20o%20Sousplat%20Pérola%20que%20vi%20na%20sua%20coleção." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20o%20Sousplat%20Pérola%20que%20vi%20na%20sua%20coleção."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Sousplat Pérola pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="mesa-posta">
-                <div class="img-container"><img src="Sousplat Perola 1.jpeg" alt="Sousplat Pérola Modelo 1"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="mesa-posta">
+                <div class="product-media">
+                    <img
+                        src="Sousplat Perola 1.jpeg"
+                        alt="Variação do Sousplat Pérola artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Mesa Posta Elegante</div>
-                        <h3>Sousplat Pérola (Opção 1)</h3>
+                        <p class="product-tag">Mesa posta elegante</p>
+                        <h3>Sousplat Pérola — Opção 1</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20os%20Sousplats%20Pérola%20(Opção%201)." target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20encomendar%20os%20Sousplats%20Pérola%20(Opção%201)."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Sousplat Pérola — Opção 1 pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
-            </div>
-
-            <div class="product-card" data-category="mesa-posta">
-                <div class="img-container"><img src="Suporte para Taça - Ani.jpeg" alt="Suporte para Taça Ani"></div>
-                <div class="product-info">
+            </article>
+            <article class="product-card" data-category="mesa-posta">
+                <div class="product-media">
+                    <img
+                        src="Suporte para Taça - Ani.jpeg"
+                        alt="Suporte para Taça Ani artesanal em crochê"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="product-content">
                     <div>
-                        <div class="product-tag">Detalhes Decoração</div>
+                        <p class="product-tag">Detalhes para receber</p>
                         <h3>Suporte para Taça Ani</h3>
+                        <p class="product-note">Consulte disponibilidade, cores, medidas e prazo de produção.</p>
                     </div>
-                    <a href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20o%20Suporte%20para%20Taça%20Ani%20super%20charmoso,%20como%20faço%20para%20adquirir?" target="_blank" class="btn-order">Solicitar Encomenda</a>
+                    <a
+                        class="button button-dark product-cta"
+                        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Achei%20o%20Suporte%20para%20Taça%20Ani%20super%20charmoso,%20como%20faço%20para%20adquirir?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Consultar Suporte para Taça Ani pelo WhatsApp"
+                    >
+                        Consultar pelo WhatsApp
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </article>
+                </div>
+
+                <noscript>
+                    <p>Ative o JavaScript para usar os filtros de categoria. Todas as peças continuam visíveis nesta página.</p>
+                </noscript>
+            </div>
+        </section>
+
+        <section class="section about" id="sobre">
+            <div class="container about-grid">
+                <div>
+                    <p class="eyebrow">Essência da marca</p>
+                    <h2>Artesanato com presença e significado.</h2>
+                    <p>
+                        A Cris Vidal Crochê valoriza o tempo do fazer manual e transforma
+                        materiais simples em peças especiais para acompanhar momentos,
+                        ambientes e histórias.
+                    </p>
+                    <p>
+                        O resultado é um crochê sofisticado, afetivo e feito para durar
+                        além das tendências.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <blockquote>
+                        “Peças exclusivas tecidas com a alma, desenhadas para vestir a
+                        rotina e a casa de elegância, autenticidade e afeto.”
+                    </blockquote>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
+        <section class="section" id="contato">
+            <div class="container">
+                <div class="contact-panel">
+                    <div>
+                        <p class="eyebrow">Encomendas e informações</p>
+                        <h2>Vamos conversar sobre sua próxima peça?</h2>
+                        <p>
+                            Envie uma mensagem pelo WhatsApp ou acompanhe as novidades,
+                            bastidores e lançamentos no Instagram.
+                        </p>
+                    </div>
 
-    <!-- Ícone Fixo do WhatsApp -->
-    <a href="https://wa.me/5513991807579" class="whatsapp-fixed" target="_blank" title="Fale Comigo no WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                    <div class="contact-actions">
+                        <a
+                            class="button button-dark"
+                            href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Gostaria%20de%20conhecer%20melhor%20as%20peças%20e%20fazer%20uma%20encomenda."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Falar no WhatsApp
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a
+                            class="button button-outline"
+                            href="https://www.instagram.com/crisvidalcrochet"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Seguir no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a
+        class="whatsapp-fixed"
+        href="https://wa.me/5513991807579?text=Olá,%20Cris!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com a Cris pelo WhatsApp"
+        title="Falar pelo WhatsApp"
+    >
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d="M19.11 17.48c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.98 2.62 1.11 2.8c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32zM16.02 3.2c-7.07 0-12.82 5.75-12.82 12.82 0 2.26.59 4.47 1.71 6.41L3.1 29l6.72-1.76a12.77 12.77 0 0 0 6.2 1.58h.01c7.07 0 12.82-5.75 12.82-12.82S23.09 3.2 16.02 3.2zm0 23.46h-.01a10.6 10.6 0 0 1-5.42-1.48l-.39-.23-3.99 1.05 1.06-3.89-.25-.4a10.62 10.62 0 1 1 9 4.95z"/>
+        </svg>
     </a>
 
-    <footer>
-        <p>&copy; 2026 Cris Vidal Crochê. Feito à mão com afeto e elegância.</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">Cris Vidal Crochê</div>
+                <p>© <span id="current-year">2026</span> — Arte feita com a mão.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#catalogo">Coleção</a>
+                <a href="#sobre">Sobre</a>
+                <a
+                    href="https://www.instagram.com/crisvidalcrochet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+                <a
+                    href="https://wa.me/5513991807579"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Script para o filtro funcionar dinamicamente -->
     <script>
-        function filterCategory(category) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        (() => {
+            "use strict";
 
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (category === 'todas') {
-                    card.style.display = 'flex';
-                } else {
-                    if (card.getAttribute('data-category') === category) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
+            const buttons = [...document.querySelectorAll(".filter-button")];
+            const cards = [...document.querySelectorAll(".product-card")];
+            const status = document.querySelector("#results-status");
+            const year = document.querySelector("#current-year");
+
+            year.textContent = new Date().getFullYear();
+
+            function applyFilter(category) {
+                let visibleCount = 0;
+
+                buttons.forEach((button) => {
+                    const isActive = button.dataset.filter === category;
+                    button.setAttribute("aria-pressed", String(isActive));
+                });
+
+                cards.forEach((card) => {
+                    const shouldShow =
+                        category === "todas" ||
+                        card.dataset.category === category;
+
+                    card.hidden = !shouldShow;
+
+                    if (shouldShow) {
+                        visibleCount += 1;
                     }
-                }
+                });
+
+                status.textContent =
+                    visibleCount === 1
+                        ? "Exibindo 1 peça."
+                        : `Exibindo ${visibleCount} peças.`;
+            }
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    applyFilter(button.dataset.filter);
+                });
             });
-        }
+        })();
     </script>
 </body>
 </html>
